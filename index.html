@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6edff" />
+  <title>Grab & Go — поймай своё счастье!</title>
+  <meta name="description" content="Игровые автоматы с игрушками Grab & Go в Санкт-Петербурге. Лиговский проспект, 74, 3 этаж." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./static/style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="container nav" aria-label="Главное меню">
+      <a href="#top" class="logo">grab<span>&</span>go<span>✳</span></a>
+      <div class="nav__links"><a href="#game">Мини-игра</a><a href="#prices">Цены</a><a href="#how">Как играть</a><a href="#where">Контакты</a></div>
+      <a class="btn btn--small" href="#where">Приходи к нам ↗</a>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero" id="game">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="eyebrow">Аркада с игрушками в Петербурге</span>
+          <h1>Поймай <span>своё</span> <em>счастье!</em></h1>
+          <p class="hero__text">Здесь живут самые милые игрушки, а за каждым захватом — маленькая история. Попробуй поймать свою прямо на сайте!</p>
+          <div class="hero__actions"><a class="btn btn--pink" href="#prices">Смотреть цены ✳</a><a class="btn btn--light" href="#where">Как нас найти ↗</a></div>
+          <p class="hero__note"><span>🕹️</span> Мини-игра бесплатная. Игрушки виртуальные!</p>
+        </div>
+        <div class="scene" id="scene" tabindex="0" aria-label="3D-автомат. Управляйте стрелками и кнопкой захвата">
+          <div class="scene__glow" aria-hidden="true"></div>
+          <div id="gameCanvas" aria-hidden="true"></div>
+          <div class="scene__hint">✦ попробуй поймать! ✦</div>
+          <div class="scene__status" id="gameStatus" aria-live="polite">Перемещай клешню и жми «Захватить»!</div>
+          <div class="controller" aria-label="Управление автоматом">
+            <div class="arrows">
+              <button type="button" class="arrow arrow--up" data-move="up" aria-label="Вперёд">↑</button>
+              <button type="button" class="arrow arrow--left" data-move="left" aria-label="Влево">←</button>
+              <button type="button" class="arrow arrow--down" data-move="down" aria-label="Назад">↓</button>
+              <button type="button" class="arrow arrow--right" data-move="right" aria-label="Вправо">→</button>
+            </div>
+            <button class="grab" id="grabBtn" type="button">✳ ЗАХВАТИТЬ</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <div class="strip" aria-label="Лови момент. Grab and Go. Твоя игрушка ждёт.">
+      <div class="strip__track" aria-hidden="true">
+        <div class="strip__group">
+
+          <span class="strip__item">
+            ЛОВИ МОМЕНТ <b>✳</b>
+          </span>
+
+          <span class="strip__item">
+            GRAB &amp; GO <b>♥</b>
+          </span>
+
+          <span class="strip__item">
+            ТВОЯ ИГРУШКА ЖДЁТ <b>✦</b>
+          </span>
+
+          <span class="strip__item">
+            ПОЙМАЙ СВОЁ СЧАСТЬЕ <b>♥</b>
+          </span>
+
+        </div>
+      </div>
+    </div>
+
+
+    <section class="block tariffs" id="prices">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">Стоимость игры</span><h2 style="margin-top:17px">Выбирай свои жетоны</h2><p>Чем больше жетонов, тем ниже стоимость одного. Ищи свою любимую игрушку в автоматах!</p></div>
+        <div class="tariff-grid">
+          <article class="tariff"><div class="tariff__icon">🍓</div><div class="tariff__count">10 жетонов</div><div class="tariff__price">650 ₽</div><div class="tariff__unit">65 ₽ за жетон</div><span class="tariff__tag">Для знакомства</span></article>
+          <article class="tariff"><div class="tariff__icon">🧁</div><div class="tariff__count">20 жетонов</div><div class="tariff__price">1 260 ₽</div><div class="tariff__unit">63 ₽ за жетон</div><span class="tariff__tag">Уже интереснее</span></article>
+          <article class="tariff"><div class="tariff__icon">🐻</div><div class="tariff__count">30 жетонов</div><div class="tariff__price">1 800 ₽</div><div class="tariff__unit">60 ₽ за жетон</div><span class="tariff__tag">Для компании</span></article>
+          <article class="tariff tariff--featured"><div class="tariff__icon">💗</div><div class="tariff__count">50 жетонов</div><div class="tariff__price">2 990 ₽</div><div class="tariff__unit">59,80 ₽ за жетон</div><span class="tariff__tag tariff__tag--pink">Популярный набор</span></article>
+          <article class="tariff"><div class="tariff__icon">👑</div><div class="tariff__count">100 жетонов</div><div class="tariff__price">5 500 ₽</div><div class="tariff__unit">55 ₽ за жетон</div><span class="tariff__tag">Максимум игры</span></article>
+        </div>
+        <p class="tariff-note">Цены приведены для демонстрационного дизайна. Перед публикацией подтвердим актуальные тарифы и правила использования жетонов у Grab & Go.</p>
+      </div>
+    </section>
+    <section class="block how" id="how">
+      <div class="container"><div class="section-heading"><span class="eyebrow">Это просто!</span><h2 style="margin-top:17px">Как всё работает?</h2></div>
+        <div class="steps">
+          <article class="step"><div class="step__icon">🎟️</div><h3>01. Выбери жетоны</h3><p>Приходи в зал и выбери удобный набор жетонов для игры.</p></article>
+          <article class="step"><div class="step__icon">🕹️</div><h3>02. Лови момент</h3><p>Выбери автомат, управляй клешнёй и попробуй захватить игрушку.</p></article>
+          <article class="step"><div class="step__icon">🧸</div><h3>03. Забирай радость</h3><p>Удачный захват — и у тебя появляется новый плюшевый друг!</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="block visit" id="where"><div class="container"><div class="visit__panel">
+      <div><span class="eyebrow">Ждём тебя!</span><h2>Место, где оживают мечты</h2><p>Заходи в Grab & Go за эмоциями, уютом и мягкими игрушками. Наш зал находится в центре Санкт-Петербурга.</p><p class="visit__address">📍 Санкт-Петербург, Лиговский проспект, 74, 3 этаж</p><div class="hero__actions"><a class="btn" target="_blank" rel="noopener noreferrer" href="https://yandex.com/maps/org/grab_go/24890191278/">Построить маршрут ↗</a><a class="btn btn--light" href="tel:+79667578774">Позвонить</a></div></div>
+      
+      <div class="visit__art" aria-hidden="true">
+        <span class="visit__bear">🧸</span>
+        <span class="visit__spark">✨</span>
+      </div>
+
+    </div></div></section>
+    <section class="faq"><div class="container faq__grid"><div><span class="eyebrow">Вопросы и ответы</span><h2 style="margin-top:18px">Немного о главном</h2></div><div>
+      <details><summary>Можно ли выиграть настоящую игрушку через сайт?</summary><p>Нет, 3D-автомат на сайте — бесплатная демонстрационная мини-игра. За настоящими призами приходите в зал.</p></details>
+      <details><summary>Один жетон — это одна попытка?</summary><p>Стоимость игры может зависеть от автомата. Уточните правила у сотрудников на месте.</p></details>
+      <details><summary>Где находится Grab & Go?</summary><p>Санкт-Петербург, Лиговский проспект, 74, 3 этаж.</p></details>
+      <details><summary>Как узнать актуальные цены?</summary><p>Уточнить тарифы можно непосредственно в зале или по телефону <a href="tel:+79667578774">+7 (966) 757-87-74</a>.</p></details>
+    </div></div></section>
+  </main>
+  <footer class="footer"><div class="container"><a href="#top" class="logo">grab<span>&</span>go<span>✳</span></a><small>Демонстрационный концепт сайта. Неофициальный проект.</small><a href="#top">Наверх ↑</a></div></footer>
+ <script type="module"  src="./static/script.js"></script>
+ <script src="./static/animat.js"></script>
+ 
+<script>
+(() => {
+  const strip = document.querySelector('.strip');
+  if (!strip) return;
+
+  const track = strip.querySelector('.strip__track');
+  const originalGroup = track.querySelector('.strip__group');
+
+  if (!track || !originalGroup) return;
+
+  // Сохраняем исходные слова
+  const originalHTML = originalGroup.innerHTML;
+
+  // Скорость движения в пикселях в секунду
+  const SPEED = 75;
+
+  function buildMarquee() {
+    // Временно останавливаем старую анимацию
+    track.style.animation = 'none';
+
+    // Удаляем старые копии
+    track.innerHTML = '';
+
+    const group = document.createElement('div');
+    group.className = 'strip__group';
+    group.innerHTML = originalHTML;
+
+    track.appendChild(group);
+
+    // Заполняем строку с запасом
+    const minWidth = strip.clientWidth + 150;
+
+    let repeatCount = 0;
+
+    while (
+      group.getBoundingClientRect().width < minWidth &&
+      repeatCount < 100
+    ) {
+      group.insertAdjacentHTML('beforeend', originalHTML);
+      repeatCount++;
+    }
+
+    // Создаём точную копию первой группы
+    const clone = group.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+
+    track.appendChild(clone);
+
+    // Ширина одного полного повторения
+    const distance = group.getBoundingClientRect().width;
+
+    // Длительность зависит от ширины,
+    // поэтому скорость всегда одинаковая
+    const duration = distance / SPEED;
+
+    track.style.setProperty(
+      '--marquee-distance',
+      `${distance}px`
+    );
+
+    track.style.setProperty(
+      '--marquee-time',
+      `${duration}s`
+    );
+
+    // Перезапускаем с новыми размерами
+    void track.offsetWidth;
+    track.style.animation = '';
+  }
+
+  // Первоначальный запуск
+  buildMarquee();
+
+  // Повторный расчёт после загрузки шрифтов
+  if (document.fonts) {
+    document.fonts.ready.then(buildMarquee);
+  }
+
+  // Перестраиваем при изменении ширины экрана
+  const observer = new ResizeObserver(() => {
+    buildMarquee();
+  });
+
+  observer.observe(strip);
+})();
+</script>
+
+</body>
+</html>
